@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root  to: 'home#index'
+  root  to: 'board#index'
 
-  post "/drawcolor", to: "home#drawcolor", via: :post
+  post "/drawcolor", to: "board#drawcolor", via: :post
 end

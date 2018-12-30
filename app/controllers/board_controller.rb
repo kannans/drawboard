@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class BoardController < ApplicationController
   before_action :set_board
   before_action :set_username
   def index
@@ -7,11 +7,15 @@ class HomeController < ApplicationController
 
   def drawcolor
     box = @board.grid_board[permit_params[:position]]
-    box["color"] = permit_params["color"]
-    box["user"] = permit_params["user"]
-    box["updated_at"] = Time.current
-    @board.save
-    head :ok
+    if box
+      box["color"] = permit_params["color"]
+      box["user"] = permit_params["user"]
+      box["updated_at"] = Time.current
+      @board.save
+      head :ok
+    else
+      head :unprocessable_entity
+    end
   end
 
   def set_board
