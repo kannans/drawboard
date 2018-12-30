@@ -68,7 +68,6 @@ RSpec.describe Board, type: :model do
     end
   end
 
-
   def create_grid_box
     board = create(:board)
     board.generate_grid_board

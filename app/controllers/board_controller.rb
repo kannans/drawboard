@@ -8,10 +8,13 @@ class BoardController < ApplicationController
   def drawcolor
     box = @board.grid_board[permit_params[:position]]
     if box
-      box["color"] = permit_params["color"]
-      box["user"] = permit_params["user"]
+      box["color"] = permit_params[:color]
+      box["user"] = permit_params[:user]
       box["updated_at"] = Time.current
       @board.save
+      box["position"] = permit_params[:position]
+      box["details"]= @board.grid_box_details(permit_params[:position])
+      ActionCable.server.broadcast 'grid_box', box
       head :ok
     else
       head :unprocessable_entity

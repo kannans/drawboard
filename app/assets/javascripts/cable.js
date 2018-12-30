@@ -10,4 +10,6 @@
 
   App.cable = ActionCable.createConsumer();
 
+  window.App = App;
+
 }).call(this);
