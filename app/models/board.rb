@@ -1,6 +1,4 @@
 class Board < ApplicationRecord
-
-  # Generate grid board..
   def generate_grid_board
     total_grid = grid_x_size * grid_y_size
     info = { color: "#fff", user: "", updated_at: "" }
@@ -22,5 +20,15 @@ class Board < ApplicationRecord
   def grid_box_color(index)
     data = grid_board[index.to_s]
     data["color"] || "#fff"
+  end
+
+  def show_top_users_grid
+    top_users = {}
+    grid_board.each do |x, box|
+      next if box['user'].blank?
+      top_users[box['user']] ||= []
+      top_users[box['user']] << box['color']
+    end
+    top_users.sort_by { |user, colors| colors.size }.reverse
   end
 end

@@ -17,3 +17,31 @@
     <% end %>
   </tbody>
 </table>
+
+
+<hr>
+
+<table>
+  <thead>
+  <tr>
+    <th>User Name</th>
+    <th> Color Placed Count</th>
+    <th> Favorite color </th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @board.show_top_users_grid.each do |name, colors| %>
+      <tr>
+      <td class="user_name">
+        <%= name %>
+      </td>
+      <td>
+        <%= colors.size %>
+      </td>
+      <td>
+        <%= colors.sort_by{ |e| e["color"]  }.last %>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
