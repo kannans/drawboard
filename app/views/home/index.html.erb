@@ -1,3 +1,6 @@
+<h3>Visitor Name: <%= @user_name%></h3>
+<h4>Choose Color: <input class="jscolor" value="ab2567"></h4>
+
 <table border="0" cellspacing="0" cellpadding="0" id="js-grid-board" data-username="<%= @user_name %>">
   <tbody>
     <% @board.grid_board.keys.in_groups_of(@board.grid_x_size).each do |group| %>
@@ -14,4 +17,3 @@
     <% end %>
   </tbody>
 </table>
-<input class="jscolor" value="ab2567">
