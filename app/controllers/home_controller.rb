@@ -1,4 +1,23 @@
 class HomeController < ApplicationController
+  before_action :set_board
   def index
+    @user_name = "Kannan"
+  end
+
+  def drawcolor
+    box = @board.grid_board[permit_params[:position]]
+    box["color"] = permit_params["color"]
+    box["user"] = permit_params["user"]
+    box["updated_at"] = Time.current
+    @board.save
+    head :ok
+  end
+
+  def set_board
+    @board = Board.last
+  end
+
+  def permit_params
+    params.permit(:position, :color, :user)
   end
 end

@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ td.js-fill-color{
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  cursor: pointer;
+ }
