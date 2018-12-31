@@ -1,24 +1,44 @@
-# README
+# LeaderBoard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build a simple server & frontend presenting a user with a 20x20 grid of squares the user can "draw" on to create a simple design.
+Also with realtime update using action cable.
 
-Things you may want to cover:
 
-* Ruby version
+# Requirements
 
-* System dependencies
+`ruby 2.6.0`
 
-* Configuration
+`rails 5.2.2`
 
-* Database creation
+`redis` # for websocket connections.
 
-* Database initialization
+`pg` # postgreSQL
+  
+`yarn` # for js packages. 
 
-* How to run the test suite
+## Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+After cloning this application do a bin setup command.
 
-* Deployment instructions
+`./bin/setup`
 
-* ...
+
+## Access site
+
+After initial setup rails the application.
+
+`rails server`
+
+Access site in http://localhost:3000
+
+
+## Resting
+
+It uses rspec test framework, execute all the test cases.
+
+`rspec`
+
+-----
+
+Dev
+@kannans
