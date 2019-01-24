@@ -1,7 +1,11 @@
-<h3>Visitor Name: <%= @user_name%></h3>
+<div>
+  <h1 class='text-center'> LeaderBoardGame </h1>
+</div>
+<p> Visitor Name: <strong> <%= @user.username %> </strong></p>
+<p> IP: <strong><%= @user.ip_address %> </strong></p>
+<hr>
 <h4>Choose Color: <input class="jscolor" value="ab2567"></h4>
-
-<table border="0" cellspacing="0" cellpadding="0" id="js-grid-board" data-username="<%= @user_name %>">
+<table border="0" cellspacing="0" cellpadding="0" id="js-grid-board" data-username="<%= @user.username %>">
   <tbody>
     <% @board.grid_board.keys.in_groups_of(@board.grid_x_size).each do |group| %>
       <tr>
@@ -18,29 +22,28 @@
   </tbody>
 </table>
 
-
 <hr>
 
-<table>
+<table class='table table-bordered'>
   <thead>
   <tr>
     <th>User Name</th>
-    <th> Color Placed Count</th>
-    <th> Favorite color </th>
+    <th>Color Placed Count</th>
+    <th>Favorite color </th>
   </tr>
   </thead>
   <tbody>
     <% @board.show_top_users_grid.each do |name, colors| %>
       <tr>
-      <td class="user_name">
-        <%= name %>
-      </td>
-      <td>
-        <%= colors.size %>
-      </td>
-      <td>
-        <%= colors.sort_by{ |e| e["color"]  }.last %>
-      </td>
+        <td class="user_name">
+          <%= name %>
+        </td>
+        <td>
+          <%= colors.size %>
+        </td>
+        <td>
+          <%= colors.sort_by{ |e| e["color"]  }.last %>
+        </td>
       </tr>
     <% end %>
   </tbody>

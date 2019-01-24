@@ -1,9 +1,8 @@
 class BoardController < ApplicationController
   before_action :set_board
-  before_action :set_username
-  def index
-    @user_name = session[:username]
-  end
+  before_action :set_and_get_user
+
+  def index;end
 
   def drawcolor
     box = @board.grid_board[permit_params[:position]]
@@ -29,7 +28,8 @@ class BoardController < ApplicationController
     params.permit(:position, :color, :user)
   end
 
-  def set_username
-    session[:username] ||= Faker::Superhero.name
+  def set_and_get_user
+    ip_address = request.remote_ip
+    @user ||= User.find_or_create_by(ip_address: ip_address)
   end
 end

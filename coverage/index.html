@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-12-31T00:38:19+05:30">2018-12-31T00:38:19+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-24T19:15:38+05:30">2019-01-24T19:15:38+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.48%</span></span>
+    (<span class="covered_percent"><span class="green">98.62%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         27.42
+         23.27
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>25</b> files in total.
-    <b>197</b> relevant lines. 
-    <span class="green"><b>194</b> lines covered</span> and
+    <b>27</b> files in total.
+    <b>217</b> relevant lines. 
+    <span class="green"><b>214</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#3c895c52ed9006954a99ffb55f4138c200d6b8bc" class="src_link" title="app/controllers/board_controller.rb">app/controllers/board_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>32</td>
-        <td>20</td>
-        <td>20</td>
+        <td>35</td>
+        <td>23</td>
+        <td>23</td>
         <td>0</td>
-        <td>1.9</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
@@ -104,10 +104,20 @@
         <td class="strong"><a href="#e8763ea337914edcc4595b7989fa63faf1451473" class="src_link" title="app/models/board.rb">app/models/board.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>37</td>
-        <td>25</td>
-        <td>25</td>
+        <td>24</td>
+        <td>24</td>
         <td>0</td>
-        <td>205.6</td>
+        <td>197.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#6e8f75d222c1f52c7dc64412ee893cab30a60633" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>10</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -253,9 +263,9 @@
       <tr>
         <td class="strong"><a href="#c618ebf02c3e0c3ef718f7cf58e645d4d80c4f93" class="src_link" title="spec/factories.rb">spec/factories.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>4</td>
-        <td>4</td>
+        <td>11</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -263,7 +273,7 @@
       <tr>
         <td class="strong"><a href="#00ed618afede16dd9a74580310699e06332efcde" class="src_link" title="spec/models/board_spec.rb">spec/models/board_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>83</td>
+        <td>82</td>
         <td>53</td>
         <td>53</td>
         <td>0</td>
@@ -271,11 +281,21 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#9593675e627e6820eedd9c08cb9716ca6865111c" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1.4</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#e3fd4cb459e83ce0bd9563bcc366301f85d91dd5" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
-        <td class="green strong">90.48 %</td>
+        <td class="yellow strong">90.0 %</td>
         <td>30</td>
-        <td>21</td>
-        <td>19</td>
+        <td>20</td>
+        <td>18</td>
         <td>2</td>
         <td>1.0</td>
       </tr>
@@ -297,7 +317,7 @@
         <td>11</td>
         <td>10</td>
         <td>1</td>
-        <td>4.2</td>
+        <td>5.0</td>
       </tr>
       
     </tbody>
@@ -352,8 +372,8 @@
     <h3>app/controllers/board_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -376,178 +396,196 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :set_username</code>
+          <code class="ruby">  before_action :set_and_get_user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def index</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="5">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    @user_name = session[:username]</code>
+          <code class="ruby">  def index;end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">  def drawcolor</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="9">
+        <li class="covered" data-hits="2" data-linenumber="8">
           <span class="hits">2</span>
           
           <code class="ruby">    box = @board.grid_board[permit_params[:position]]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
+        <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
           <code class="ruby">    if box</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      box[&quot;color&quot;] = permit_params[:color]</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">      box[&quot;color&quot;] = permit_params[&quot;color&quot;]</code>
+          <code class="ruby">      box[&quot;user&quot;] = permit_params[:user]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">      box[&quot;user&quot;] = permit_params[&quot;user&quot;]</code>
+          <code class="ruby">      box[&quot;updated_at&quot;] = Time.current</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">      box[&quot;updated_at&quot;] = Time.current</code>
+          <code class="ruby">      @board.save</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">      @board.save</code>
+          <code class="ruby">      box[&quot;position&quot;] = permit_params[:position]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      head :ok</code>
+          <code class="ruby">      box[&quot;details&quot;]= @board.grid_box_details(permit_params[:position])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    else</code>
+          <code class="ruby">      ActionCable.server.broadcast &#39;grid_box&#39;, box</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">      head :unprocessable_entity</code>
+          <code class="ruby">      head :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      head :unprocessable_entity</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_board</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="22">
+        <li class="covered" data-hits="6" data-linenumber="24">
           <span class="hits">6</span>
           
           <code class="ruby">    @board = Board.last</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  def permit_params</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="26">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="28">
+          <span class="hits">6</span>
           
           <code class="ruby">    params.permit(:position, :color, :user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_username</code>
+          <code class="ruby">  def set_and_get_user</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="30">
+        <li class="covered" data-hits="6" data-linenumber="32">
           <span class="hits">6</span>
           
-          <code class="ruby">    session[:username] ||= Faker::Superhero.name</code>
+          <code class="ruby">    ip_address = request.remote_ip</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="6" data-linenumber="33">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    @user ||= User.find_or_create_by(ip_address: ip_address)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
@@ -662,8 +700,8 @@
     <h3>app/models/board.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>25</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -767,26 +805,26 @@
           <code class="ruby">  def grid_box_details(index)</code>
         </li>
       
-        <li class="covered" data-hits="402" data-linenumber="17">
-          <span class="hits">402</span>
+        <li class="covered" data-hits="403" data-linenumber="17">
+          <span class="hits">403</span>
           
           <code class="ruby">    data = grid_board[index.to_s]</code>
         </li>
       
-        <li class="covered" data-hits="402" data-linenumber="18">
-          <span class="hits">402</span>
+        <li class="covered" data-hits="403" data-linenumber="18">
+          <span class="hits">403</span>
           
           <code class="ruby">    if data &amp;&amp; data[&quot;user&quot;].present?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="19">
+          <span class="hits">2</span>
           
           <code class="ruby">      &quot;#{data[&quot;user&quot;]}, #{data[&quot;updated_at&quot;]}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="402" data-linenumber="20">
-          <span class="hits">402</span>
+        <li class="never" data-hits="" data-linenumber="20">
+          
           
           <code class="ruby">    end || &quot;&quot;</code>
         </li>
@@ -888,6 +926,85 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="6e8f75d222c1f52c7dc64412ee893cab30a60633">
+  <div class="header">
+    <h3>app/models/user.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class User &lt; ApplicationRecord</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :username, :ip_address, uniqueness: true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_create :set_random_username</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def set_random_username</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="8">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    self.username = Faker::Superhero.name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
@@ -2225,8 +2342,8 @@
     <h3>spec/factories.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2265,6 +2382,36 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  factory :user do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    ip_address &quot;120.212.124.12&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    username Faker::User.name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">end</code>
@@ -2709,79 +2856,188 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">  def create_grid_box</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="73">
+        <li class="covered" data-hits="3" data-linenumber="72">
           <span class="hits">3</span>
           
           <code class="ruby">    board = create(:board)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="74">
+        <li class="covered" data-hits="3" data-linenumber="73">
           <span class="hits">3</span>
           
           <code class="ruby">    board.generate_grid_board</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="75">
+        <li class="covered" data-hits="3" data-linenumber="74">
           <span class="hits">3</span>
           
           <code class="ruby">    board.reload</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="76">
+        <li class="covered" data-hits="3" data-linenumber="75">
           <span class="hits">3</span>
           
           <code class="ruby">    box = board.grid_board[&quot;3&quot;]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="77">
+        <li class="covered" data-hits="3" data-linenumber="76">
           <span class="hits">3</span>
           
           <code class="ruby">    box[&quot;user&quot;] = &quot;testuser&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="78">
+        <li class="covered" data-hits="3" data-linenumber="77">
           <span class="hits">3</span>
           
           <code class="ruby">    box[&quot;updated_at&quot;] = Time.current</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="79">
+        <li class="covered" data-hits="3" data-linenumber="78">
           <span class="hits">3</span>
           
           <code class="ruby">    box[&quot;color&quot;] = &quot;#FFFRDS&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="80">
+        <li class="covered" data-hits="3" data-linenumber="79">
           <span class="hits">3</span>
           
           <code class="ruby">    board.save</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="81">
+        <li class="covered" data-hits="3" data-linenumber="80">
           <span class="hits">3</span>
           
           <code class="ruby">    board</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="9593675e627e6820eedd9c08cb9716ca6865111c">
+  <div class="header">
+    <h3>spec/models/user_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &quot;rails_helper&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe User, type: :model do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  context &quot;#validations&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    subject { create(:user) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_uniqueness_of(:username) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_uniqueness_of(:ip_address).case_insensitive }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  context &quot;#set_random_username&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;should set random username before creating the user&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      user = User.create(ip_address: &quot;140.23.23.23&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(user.username.present?).to be_truthy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -2795,10 +3051,10 @@
         <div class="source_table" id="e3fd4cb459e83ce0bd9563bcc366301f85d91dd5">
   <div class="header">
     <h3>spec/rails_helper.rb</h3>
-    <h4><span class="green">90.48 %</span> covered</h4>
+    <h4><span class="yellow">90.0 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>20</b> relevant lines. 
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -2860,8 +3116,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="10">
+          
           
           <code class="ruby">begin</code>
         </li>
@@ -3330,8 +3586,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="7">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="16" data-linenumber="7">
+          <span class="hits">16</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :deletion</code>
         </li>
@@ -3378,8 +3634,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="15">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="16" data-linenumber="15">
+          <span class="hits">16</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -3402,8 +3658,8 @@
           <code class="ruby">  config.after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="19">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="16" data-linenumber="19">
+          <span class="hits">16</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>

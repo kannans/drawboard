@@ -13,8 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap';
 
- td.js-fill-color{
+td.js-fill-color{
   height: 40px;
   width: 40px;
   border: 1px solid black;
